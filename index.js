@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use('/api/user', user) ;
 app.use('/api/tevent', tevent);
-app.use('/api/teams', team);
+app.use('/api/team', team);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server is listening on port ${process.env.PORT}`)

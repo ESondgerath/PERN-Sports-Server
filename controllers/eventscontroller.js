@@ -20,14 +20,14 @@ router.post("/create", (req, res) => {
 })
 
 router.put("/updateevent", (req, res) => {
-    var tevents = req.body.TEvent.id;
+    var tevent = req.body.TEvent.id;
 
     TEvent.update({
         name: req.body.TEvent.name,
         date: req.body.TEvent.date,
         teams: req.body.TEvent.teams,
     },
-    {where: {id: data}}
+    {where: {id: tevent}}
     ).then(
         function updateSuccess() {
             res.json({

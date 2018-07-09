@@ -18,14 +18,14 @@ router.post("/create", (req, res) => {
     .catch(err => res.status(500).json({error: err.errors[0].message}))
 })
 
-router.put("/updateteams", (req, res) => {
+router.put("/updateteam", (req, res) => {
     var team = req.body.Teams.id;
 
     Teams.update({
         name: req.body.Teams.name,
         teamowner: req.body.Teams.teamowner
     },
-    {where: {id: data}}
+    {where: {id: team}}
     ).then(
         function updateSuccess() {
             res.json({
